@@ -1,4 +1,4 @@
-package com.preproject.model;
+package com.preproject.spring.springboot.model;
 
 import lombok.Data;
 

@@ -1,7 +1,7 @@
-package com.preproject.service;
+package com.preproject.spring.springboot.service;
 
-import com.preproject.Repository.UserRepository;
-import com.preproject.model.User;
+import com.preproject.spring.springboot.Repository.UserRepository;
+import com.preproject.spring.springboot.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

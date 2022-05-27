@@ -1,7 +1,7 @@
-package com.preproject.Controller;
+package com.preproject.spring.springboot.Controller;
 
-import com.preproject.model.User;
-import com.preproject.service.UserService;
+import com.preproject.spring.springboot.model.User;
+import com.preproject.spring.springboot.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
