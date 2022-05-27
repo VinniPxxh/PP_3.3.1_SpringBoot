@@ -5,8 +5,7 @@ import com.preproject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,5 +35,29 @@ public class UserController {
     public String createUser(User user) {
         userService.addOrUpdateUser(user);
         return "redirect:/users";
+    }
+
+    @GetMapping(value = "/{id}/update-user")
+    public String formUpdateUser(@PathVariable Long id, Model model) {
+        model.addAttribute("user", userService.getUserById(id));
+        return "update-user";
+    }
+    @PatchMapping("/{id}")
+    public String updateUser(@ModelAttribute("user") User user, @PathVariable("id") Long id) {
+        userService.addOrUpdateUser(user);
+        return "redirect:/users";
+    }
+
+    @GetMapping(value = "/remove/{id}")
+    @DeleteMapping("/{id}")
+    public String removeUser(@PathVariable Long id) {
+        userService.deleteById(id);
+        return "redirect:/users";
+    }
+
+    @GetMapping("/{id}")
+    public String getUserById(@PathVariable("id") Long id, Model model) {
+        model.addAttribute("user", userService.getUserById(id));
+        return "update-user";
     }
 }
