@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Users</title>
+    <title>USERS</title>
 </head>
 <body>
 <br>
@@ -17,7 +17,7 @@
             <th>EMAIL</th>
             <th>SALARY</th>
             <th>
-                <button><a href="/new">NEW</a></button>
+                <button><a href="/create-user">NEW</a></button>
             </th>
         </tr>
         <tr th:each="user : ${users}">
@@ -27,7 +27,7 @@
             <td th:utext="${user.email}">...</td>
             <td th:utext="${user.salary}">...</td>
             <td>
-                <button><a th:href="@{/{id}(id=${user.id()})}">Edit</a></button>
+                <button><a th:href="@{/{id}(id=${user.getId()})}">Edit</a></button>
             </td>
             <td>
                 <button><a th:href="@{/remove/{id}(id=${user.id})}">Delete</a></button>
