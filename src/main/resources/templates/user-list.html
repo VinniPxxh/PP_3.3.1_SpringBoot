@@ -27,10 +27,10 @@
             <td th:utext="${user.email}">...</td>
             <td th:utext="${user.salary}">...</td>
             <td>
-                <button><a th:href="@{/{id}(id=${user.getId()})}">Edit</a></button>
+                <button><a th:href="@{/{id}(id=${user.getId()})}">Update</a></button>
             </td>
             <td>
-                <button><a th:href="@{/remove/{id}(id=${user.id})}">Delete</a></button>
+                <button><a th:href="@{/user-delete/{id}(id=${user.id})}">Delete</a></button>
             </td>
             </td>
         </tr>
