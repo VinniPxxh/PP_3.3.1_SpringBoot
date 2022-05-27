@@ -44,7 +44,7 @@ public class UserController {
     }
 
     @PatchMapping("/{id}")
-    public String updateUser(@ModelAttribute("user") User user, @PathVariable("id") Long id) {
+    public String updateUser(@ModelAttribute("user") User user) {
         userService.addOrUpdateUser(user);
         return "redirect:/users";
     }
@@ -52,7 +52,7 @@ public class UserController {
     @GetMapping(value = "/user-delete/{id}")
     @DeleteMapping("/{id}")
     public String removeUser(@PathVariable Long id) {
-        userService.deleteById(id);
+        userService.deleteById(userService.getUserById(id));
         return "redirect:/users";
     }
 
