@@ -42,6 +42,7 @@ public class UserController {
         model.addAttribute("user", userService.getUserById(id));
         return "update-user";
     }
+
     @PatchMapping("/{id}")
     public String updateUser(@ModelAttribute("user") User user, @PathVariable("id") Long id) {
         userService.addOrUpdateUser(user);
